@@ -377,7 +377,7 @@ const Projects = () => {
             image: attendanceImg
         },
         {
-            title: 'LMS System',
+            title: 'Learning Management System',
             desc: 'Learning Management System for educational institutions.',
             tech: ['React', 'PHP', 'MySQL'],
             status: 'ongoing',
@@ -392,7 +392,7 @@ const Projects = () => {
             image: recipeImg
         },
         {
-            title: 'Point of Sales',
+            title: 'Point of Sales System',
             desc: 'Efficient POS system for retail management.',
             tech: ['Python'],
             status: 'completed',

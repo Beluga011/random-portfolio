@@ -137,6 +137,17 @@ const Footer = () => {
         marginBottom: '1rem'
     };
 
+    const [eggClicks, setEggClicks] = useState(0);
+
+    const handleCopyClick = () => {
+        const newCount = eggClicks + 1;
+        setEggClicks(newCount);
+        if (newCount === 9) {
+            alert("User must go into the /secret.json file");
+            setEggClicks(0);
+        }
+    };
+
     return (
         <footer id="contact" style={{
             background: '#050505',
@@ -187,9 +198,9 @@ const Footer = () => {
                                 <h3 style={{ fontSize: '0.9rem', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '1.5rem', color: '#fff', letterSpacing: '1px' }}>Socials</h3>
                                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                                     {[
-                                        { name: 'GitHub', icon: <Github size={20} />, url: 'https://github.com' },
-                                        { name: 'LinkedIn', icon: <Linkedin size={20} />, url: 'https://linkedin.com' },
-                                        { name: 'Twitter', icon: <Twitter size={20} />, url: 'https://twitter.com' }
+                                        { name: 'GitHub', icon: <Github size={20} />, url: 'http://github.com/beluga011/' },
+                                        { name: 'Facebook', icon: <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="FB" style={{ width: 20, height: 20 }} />, url: 'https://www.facebook.com/alfredoooooooooo123' },
+                                        { name: 'Instagram', icon: <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="IG" style={{ width: 20, height: 20 }} />, url: 'https://www.instagram.com/_itsmecoc0/' }
                                     ].map(item => (
                                         <li key={item.name}>
                                             <a
@@ -232,7 +243,7 @@ const Footer = () => {
                     gap: '1rem'
                 }}>
                     <p style={{ color: '#333', fontSize: '0.8rem' }}>
-                        © {new Date().getFullYear()} Fred. All rights reserved.
+                        © <span onClick={handleCopyClick} style={{ cursor: 'pointer' }}>{new Date().getFullYear()}</span> Fred. All rights reserved.
                     </p>
 
                     <button
