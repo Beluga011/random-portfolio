@@ -7,11 +7,11 @@ const Typewriter = ({ text, speed = 100 }) => {
 
     useEffect(() => {
         let i = 0;
+        setDisplayText(''); // Reset on text change
         const interval = setInterval(() => {
-            if (i < text.length) {
-                setDisplayText((prev) => prev + text.charAt(i));
-                i++;
-            } else {
+            i++;
+            setDisplayText(text.substring(0, i));
+            if (i === text.length) {
                 clearInterval(interval);
             }
         }, speed);

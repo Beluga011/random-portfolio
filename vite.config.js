@@ -4,7 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/random-portfolio/',
+  base: '/',
   plugins: [
     react(),
     VitePWA({
@@ -18,7 +18,9 @@ export default defineConfig({
         background_color: '#050505',
         display: 'standalone',
         orientation: 'portrait',
+        scope: '/',
         start_url: '/',
+        id: '/',
         icons: [
           {
             src: 'pwa-192x192.png',
